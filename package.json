@@ -1,0 +1,19 @@
+{
+  "name": "LowercaseJobs",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "express": "~4.13.3",
+    "mongoose": "~4.3.4",
+    "body-parser": "~1.14.2",
+    "passport": "~0.3.2",
+    "passport-twitter": "~1.0.3",
+    "express-session": "~1.13.0"
+  }
+}
