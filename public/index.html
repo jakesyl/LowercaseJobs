@@ -34,8 +34,8 @@
           <div class="listing" ng-repeat="listing in listings | filter:search">
               <a target="_blank" ng-href="{{ listing.moreinfo }}"><div class="col-md-10">
               <div style="display: inline-block;" class="position">
-      <span class="position-text">{{ listing.position }}</span> at
-                <span class="company-text">{{ listing.company }}</span>
+      <span class="position-text" style="margin-right: 5px">{{ listing.position }}</span> at
+                <span class="company-text" style="margin-left: 5px">{{ listing.company }}</span>
               </div>
             </div>
             <div class="moreinfo" style="display: inline-block; width: 50px;"><i class="fa fa-arrow-right fa-2x"></i>
