@@ -62,7 +62,7 @@ app.get('/api/posts', function(req, res) {
     res.json(post)
   });
 });
-
+/*
 app.post('/api/submit', function(req, res) {
 
   Post.create({
@@ -76,7 +76,7 @@ app.post('/api/submit', function(req, res) {
     res.redirect('/')
   });
 });
-
+*/
 app.get('/', function(req, res) {
   res.sendfile('./public/index.html');
 });
