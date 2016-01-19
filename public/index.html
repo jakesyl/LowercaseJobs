@@ -9,6 +9,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <!-- load jquery -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+
     <!-- load angular -->
     <script src="core.js"></script>
 
@@ -25,17 +26,23 @@
         <img style="margin-top: 50px;" src="https://lowercasellc.files.wordpress.com/2012/08/logo-big.png" class="text-center">
         <h1 id="jobh1">Jobs</h1>
 
-<div class="row">
-  <div class="listing" ng-repeat="listing in listings">
-  <div class="col-md-10">
-          <div style="display: inline-block;" class="position">{{ listing.position }} at {{ listing.company }}</div>
-          <div style="display: inline-block;" class="description">{{ listing.description }}</div>
-</div>
-          <div class="moreinfo" style="display: inline-block; width: 50px;"><a ng-href="{{ listing.moreinfo }}"><i class="fa fa-arrow-right fa-2x"></i>
-</a></div>
-      </div>
+        <input id="filter" type="text" ng-model="search" placeholder="Filter Positions" aria-label="filter positions" />
+        <i id="filtersubmit" class="fa fa-search"></i>
 
-    </div>
+
+        <div class="row">
+          <div class="listing" ng-repeat="listing in listings | filter:search">
+              <a target="_blank" ng-href="{{ listing.moreinfo }}"><div class="col-md-10">
+              <div style="display: inline-block;" class="position">
+      <span class="position-text">{{ listing.position }}</span> at
+                <span class="company-text">{{ listing.company }}</span>
+              </div>
+            </div>
+            <div class="moreinfo" style="display: inline-block; width: 50px;"><i class="fa fa-arrow-right fa-2x"></i>
+</a></div>
+          </<di></div>
+
+        </div>
 
 
   </body>
