@@ -109,5 +109,5 @@ app.get('/checklogin',function(req,res){
     res.send(false);
 });
 
-app.listen(3000)
+app.listen(process.env.PORT || 5000)
 console.log('App running on 3000')
