@@ -15,5 +15,10 @@
     "passport": "~0.3.2",
     "passport-twitter": "~1.0.3",
     "express-session": "~1.13.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.1.1"
   }
 }

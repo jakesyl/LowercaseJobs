@@ -1,20 +1,15 @@
 <html ng-app="LowercaseJobs">
 
   <head>
-    <link rel="stylesheet" href="style.css">
-
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/app.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Lato:200,400,700,300,900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <!-- load jquery -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
     <title>Lowercase Jobs</title>
     <link rel="icon" type="image/ico" href="favicon.ico">
     <!-- load angular -->
     <script src="core.js"></script>
-
-
   </head>
 
   <body ng-controller="mainCtrl">
@@ -24,25 +19,24 @@
 
     <div class="container">
       <div class="text-center">
-        <img style="margin-top: 50px;" src="https://lowercasellc.files.wordpress.com/2012/08/logo-big.png" class="text-center">
+        <img src="https://lowercasellc.files.wordpress.com/2012/08/logo-big.png" class="text-center">
         <h1 id="jobh1">Jobs</h1>
-        <h3 style="font-weight: 400;">Lowercase Jobs - A site to find jobs at <a style="text-decoration: underline;" href="http://lowercasecapital.com">Lowercase Capital's</a> <a  style="text-decoration: underline;" href="http://lowercasecapital.com/posse">Portfolio Companies.</a></h3>
-        <!--<h4 style="font-weight: 400;">Created by <a style="text-decoration: underline;" href="twitter.com/TheStefanStokic">Stefan Stokic</a></h4>-->
-
-        <input id="filter" type="text" ng-model="search" placeholder="Filter Positions" aria-label="filter positions" />
+        <h3>A site to find jobs at <br><a href="http://lowercasecapital.com">Lowercase Capital's</a> <a href="http://lowercasecapital.com/posse">Portfolio Companies.</a></h3>
         <i id="filtersubmit" class="fa fa-search"></i>
+        <input id="filter" type="text" ng-model="search" placeholder="Filter Positions" aria-label="filter positions" />
+
 
 
         <div class="row">
           <div class="listing" ng-repeat="listing in listings | filter:search">
             <a target="_blank" ng-href="{{ listing.moreinfo }}">
-              <div class="col-sm-9 col-md-10">
-                <div style="display: inline-block;" class="position">
-                  <span class="position-text" style="margin-right: 5px">{{ listing.position }}</span>-
-                  <span class="company-text" style="margin-left: 5px">{{ listing.company }}</span>
+            <div class="col-wrapper col-sm-9 col-md-10">
+                <div class="coposition-text">
+                  <div class="position-text">{{ listing.position }}</div>-
+                  <div class="company-text">{{ listing.company }}</div>
                 </div>
-              </div>
-              <div class="moreinfo" style="display: inline-block; width: 50px;"><i class="fa fa-arrow-right fa-lg"></i>
+            </div>
+              <div class="moreinfo"><div class="fa-container"><i class="fa fa-arrow-right fa-lg"></i></div>
             </a>
             </div>
             </<div></div>
