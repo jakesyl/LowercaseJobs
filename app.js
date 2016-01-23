@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var passport = require('passport');
 var Strategy = require('passport-twitter').Strategy;
 var session = require('express-session')
-
+<script type="text/javascript" src="http://fast.fonts.net/jsapi/f1224b0a-af99-4875-b535-b242a673728e.js"></script>
 
 mongoose.connect('mongodb://admin:lowercase@ds047325.mongolab.com:47325/lowercasejobs');
 

@@ -1,9 +1,10 @@
 $primary: #EB6E1F;
-$background: #F4F4F4;
+$background: #FAFAFA;
 $grey: #cbcbcb;
+
 @import '_grid';
 body {
-  font-family: Lato;
+  font-family: 'Roboto Slab', 'Lato';
   background: $background;
   display: block;
   margin: 0;
