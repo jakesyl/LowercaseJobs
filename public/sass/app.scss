@@ -8,6 +8,7 @@ body {
   background: $background;
   display: block;
   margin: 0;
+
   * {
     box-sizing: border-box;
     transition: all 500ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
@@ -23,7 +24,7 @@ body {
     height: 70px;
     width: 100%;
   }
-  .container {
+  #home {
     .text-center {
       text-align: center;
       img {
@@ -116,4 +117,69 @@ body {
       }
     }
   }
+
+  #panel {
+    padding: 50px;
+    .row {
+      .listing {
+        border: 1px #EB6E1F solid;
+        margin: 30px 0;
+        padding: 20px 0;
+        border-radius: 5px;
+        overflow: auto;
+        a {
+
+        }
+        .col-wrapper {
+          div {
+            display: inline-block;
+          }
+          .coposition-text {
+            .position-text {
+              margin-right: 5px;
+              font-size:18px;
+              color: #EB6E1F;
+            }
+            .company-text {
+              margin-left: 5px;
+              font-size: 18px;
+            }
+          }
+        }
+        .moreinfo {
+          display: inline-block;
+          width: 120px;
+          a {
+            color: #333;
+            text-decoration: none;
+            cursor: auto;
+
+            i {
+              margin: 0px 5px;
+              color: $primary;
+            }
+          }
+        }
+      }
+
+      .submit-edit {
+        margin: 30px 0px;
+        input {
+        padding: 10px;
+        border: solid 1px #dcdcdc;
+        transition: box-shadow 0.3s, border 0.3s;
+        }
+        &:focus {
+          border: solid 1px #707070;
+          box-shadow: 0 0 5px 1px #969696;
+          }
+        a {
+        background-color: $primary;
+        color: white;
+        padding: 10px 20px;
+     }
+        }
+      }
+    }
+
 }
