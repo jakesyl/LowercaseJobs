@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
     <title>Lowercase Jobs</title>
-    <link rel="icon" type="image/ico" href="favicon.ico">
+    <link rel="icon" type="image/ico" href="././public/favicon.ico">
     <!-- load angular -->
-    <script src="core.js"></script>
+    <script src="http://localhost:3000/core.js"></script>
   </head>
 
   <body ng-controller="panelCtrl">
 
 
-    <div class="text-center container">
-      <div class="row">
+    <div class="text-center container" ng-repeat="listing in listings">
+      <div style="padding: 50px 0px;" class="row">
         <div class="col-xs-12 col-sm-6">
-          <div class="list-group" ng-repeat="listing in listings">
+          <div class="list-group">
             <div class="list-group-item">
               <a ng-href="{{ listing.moreinfo }}">
                 {{ listing.position}} - {{ listing.company }}  - {{ listing._id }}
@@ -31,11 +31,12 @@
           </div>
         </div>
 
+
         <div class="col-xs-12 col-sm-6">
           <input type="text" class="text-center" ng-model="formData.position" placeholder="Title of Position" required><br><br>
           <input type="text" class="text-center" ng-model="formData.company" placeholder="Company Name" required><br><br>
           <input type="text" class="text-center" ng-model="formData.moreinfo" placeholder="Link to More Info" required><br><br>
-          <a class="btn btn-primary" ng-click="createAdminListing()">SUBMIT</a>
+          <a class="btn btn-primary" ng-click="editAdminListing(listing._id)">EDIT</a>
         </div>
       </div>
     </div>

@@ -8,8 +8,9 @@ var bcrypt = require('bcrypt-nodejs');
 var LocalStrategy = require('passport-local').Strategy;
 var methodOverride = require('method-override');
 
-// mongoose.connect('mongodb://admin:lowercase@ds047325.mongolab.com:47325/lowercasejobs');
+// mongoose.connect('mongodb://lcjobs:lcjobs@ds047325.mongolab.com:47325/lowercasejobs');
 mongoose.connect('mongodb://localhost:27017');
+
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({
@@ -222,6 +223,17 @@ app.delete('/api/posts/:id/edit', function(req, res) {
     });
 });
 
+app.get('/posts/edit/:id', function(req, res) {
+  Post.findById(req.params.id, function(err, post) {
+      if (err) {
+          console.log(err);
+      } else {
+          res.sendfile('./public/edit.html')
+        //  res.json(post);
+      }
+  });
+});
+
 
 app.post('/api/posts', function(req, res) {
 
@@ -232,7 +244,6 @@ app.post('/api/posts', function(req, res) {
     }, function(err, post) {
         if (err)
             res.send(err);
-        res.redirect('/')
     });
 });
 
