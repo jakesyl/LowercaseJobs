@@ -2,9 +2,9 @@
 
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/app.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
     <title>Lowercase Jobs</title>
     <link rel="icon" type="image/ico" href="favicon.ico">
@@ -16,8 +16,11 @@
 
 
     <div class="text-center container">
+
+
+      
       <div class="row">
-        <div class="col-xs-12 col-sm-6">
+        <div class="col-xs-12 col-sm-4">
           <div class="list-group" ng-repeat="listing in listings">
             <div class="list-group-item">
               <a ng-href="{{ listing.moreinfo }}">
@@ -31,12 +34,29 @@
           </div>
         </div>
 
-        <div class="col-xs-12 col-sm-6">
+
+
+
+
+
+
+
+        <div class="col-xs-12 col-sm-4">
           <input type="text" class="text-center" ng-model="formData.position" placeholder="Title of Position" required><br><br>
           <input type="text" class="text-center" ng-model="formData.company" placeholder="Company Name" required><br><br>
           <input type="text" class="text-center" ng-model="formData.moreinfo" placeholder="Link to More Info" required><br><br>
           <a class="btn btn-primary" ng-click="createAdminListing()">SUBMIT</a>
         </div>
+
+        <div class="col-xs-12 col-sm-4">
+          <input type="text" class="text-center" ng-model="editData.position" placeholder="Title of Position" required><br><br>
+          <input type="text" class="text-center" ng-model="editData.company" placeholder="Company Name" required><br><br>
+          <input type="text" class="text-center" ng-model="editData.moreinfo" placeholder="Link to More Info" required><br><br>
+          <input type="text" class="text-center" ng-model="editData.id" placeholder="MUST ENTER ID" required><br><br>
+          <a class="btn btn-primary" ng-click="editAdminListing()">EDIT</a>
+        </div>
+
+
       </div>
     </div>
   </body>

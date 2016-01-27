@@ -54,10 +54,12 @@ function panelCtrl($scope, $http) {
 
   };
 
-  $scope.editAdminListing = function(listingID) {
-    $http.put('/api/posts/' + listingID + '/edit', $scope.formData)
+    $scope.editData = {}
+
+  $scope.editAdminListing = function() {
+    $http.put('/api/posts/' + $scope.editData.id + '/edit', $scope.editData)
       .success(function(data){
-        $scope.formData = {};
+        $scope.editData = {}
         $scope.listing = data;
         console.log(data);
       })

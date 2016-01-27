@@ -189,9 +189,10 @@ app.put('/api/posts/:id/edit', function(req, res) {
     var position = req.body.position;
     var company = req.body.company;
     var moreinfo = req.body.moreinfo;
+    var id = req.body.id;
+    console.log(id);
 
-
-    Post.findById(req.params.id, function(err, post) {
+      Post.findById(id, function(err, post) {
         post.update({
             position: position,
             company: company,
