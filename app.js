@@ -8,8 +8,8 @@ var bcrypt = require('bcrypt-nodejs');
 var LocalStrategy = require('passport-local').Strategy;
 var methodOverride = require('method-override');
 
-// mongoose.connect('mongodb://lcjobs:lcjobs@ds047325.mongolab.com:47325/lowercasejobs');
-mongoose.connect('mongodb://localhost:27017');
+mongoose.connect('mongodb://lcjobs:lcjobs@ds047325.mongolab.com:47325/lowercasejobs');
+// mongoose.connect('mongodb://localhost:27017');
 
 
 app.use(express.static(__dirname + '/public'));
