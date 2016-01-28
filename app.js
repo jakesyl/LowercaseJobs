@@ -12,14 +12,8 @@ var path = require('path');
 var database = require('./config/database');
 var User = require('./models/user.js');
 
-// passport = require('./config/passport');
 
 mongoose.connect(database.url);
-// mongoose.connect('mongodb://localhost:27017');
-
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({'extended': 'true'}));
