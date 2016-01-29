@@ -21,18 +21,10 @@ LCJobs.config(function ($routeProvider) {
       controller: 'registerController',
       access: {restricted: false}
     })
-    .when('/one', {
-      template: '<h1>This is page one!</h1>',
-      access: {restricted: true}
-    })
-    .when('/two', {
-      template: '<h1>This is page two!</h1>',
+    .when('/register', {
+      templateUrl: 'partials/register.html',
+      controller: 'registerController',
       access: {restricted: false}
-    })
-    .when('/panel', {
-      templateUrl: 'partials/panel.html',
-      controller: 'panelCtrl',
-      access: {restricted: true}
     })
     .otherwise({redirectTo: '/'});
 });

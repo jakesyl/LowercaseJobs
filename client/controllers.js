@@ -2,7 +2,6 @@ angular.module('LCJobs').controller('loginController',
   ['$scope', '$location', 'AuthService',
   function ($scope, $location, AuthService) {
 
-    console.log(AuthService.getUserStatus());
 
     $scope.login = function () {
 
@@ -120,6 +119,7 @@ function ($scope, $location, $http) {
         .success(function(data) {
           $scope.listings = data;
           console.log(data);
+          $scope.formData = {};
         });
     };
 

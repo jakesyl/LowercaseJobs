@@ -56,4 +56,22 @@ app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, '../client', 'index.html'));
 });
 
+app.get('/login', function(req, res) {
+  res.redirect('/#/login');
+});
+
+function loggedIn(req, res, next) {
+    if (req.user) {
+        next();
+    } else {
+        res.redirect('/login');
+    }
+}
+
+app.get('/panel', loggedIn, function(req, res, next) {
+    // req.user - will exist
+    //  res.json("works");
+    res.sendFile(path.join(__dirname, '../client', 'panel.html'));
+});
+
 module.exports = app;

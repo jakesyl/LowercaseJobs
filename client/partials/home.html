@@ -1,29 +1,30 @@
-<div id="header">
-    <h1></h1>
-</div>
 
-<div id="home" class="container">
-    <div class="text-center">
-        <img src="https://lowercasellc.files.wordpress.com/2012/08/logo-big.png" class="text-center">
-        <h1 id="jobh1">Jobs</h1>
-        <h3>A site to find jobs at <br><a href="http://lowercasecapital.com">Lowercase Capital's</a> <a href="http://lowercasecapital.com/posse">Portfolio Companies.</a></h3>
-        <i id="filtersubmit" class="fa fa-search"></i>
-        <input id="filter" type="text" ng-model="search" placeholder="Filter Positions" aria-label="filter positions" />
+  <div id="header">
+      <h1></h1>
+  </div>
 
-        <div class="row">
-            <div class="listing" ng-repeat="listing in listings | filter:search">
-                <a target="_blank" ng-href="{{ listing.moreinfo }}">
-                    <div class="col-wrapper col-sm-9 col-md-10">
-                        <div class="coposition-text">
-                            <div class="position-text">{{ listing.position }}</div>-
-                            <div class="company-text">{{ listing.company }}</div>
-                        </div>
-                    </div>
-                    <div class="moreinfo">
-                        <div class="fa-container"><i class="fa fa-arrow-right fa-lg"></i>
-                        </div>
-                </a>
-                </div>
-                </<div></div>
+  <div id="home" class="container">
+      <div class="text-center">
+          <img src="https://lowercasellc.files.wordpress.com/2012/08/logo-big.png" class="text-center">
+          <h1 id="jobh1">Jobs</h1>
+          <h3>A site to find jobs at <br><a href="http://lowercasecapital.com">Lowercase Capital's</a> <a href="http://lowercasecapital.com/posse">Portfolio Companies.</a></h3>
+          <i id="filtersubmit" class="fa fa-search"></i>
+          <input id="filter" type="text" ng-model="search" placeholder="Filter Positions" aria-label="filter positions" />
 
-        </div>
+          <div class="row">
+              <div class="listing" ng-repeat="listing in listings | filter:search">
+                  <a target="_blank" ng-href="{{ listing.moreinfo }}">
+                      <div class="col-wrapper col-sm-9 col-md-10">
+                          <div class="coposition-text">
+                              <div class="position-text">{{ listing.position }}</div>-
+                              <div class="company-text">{{ listing.company }}</div>
+                          </div>
+                      </div>
+                      <div class="moreinfo">
+                          <div class="fa-container"><i class="fa fa-arrow-right fa-lg"></i>
+                          </div>
+                  </a>
+                  </div>
+                  </<div></div>
+
+          </div>
