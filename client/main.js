@@ -4,7 +4,8 @@ LCJobs.config(function ($routeProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'partials/home.html',
-      controller: 'mainCtrl'
+      controller: 'mainCtrl',
+      access: {restricted: false}
     })
     .when('/login', {
       templateUrl: 'partials/login.html',
