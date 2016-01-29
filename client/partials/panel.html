@@ -1,0 +1,41 @@
+<div id="panel" class="text-center">
+  <div class="row">
+    <div class="listing-col col-xs-12 col-sm-6 ">
+      <div class="listing" ng-repeat="listing in listings">
+              <div class="col-wrapper col-xs-12 col-sm-9">
+                  <div class="coposition-text">
+                      <div class="position-text">{{ listing.position }}</div>-
+                      <div class="company-text">{{ listing.company }}</div>
+                  </div>
+              </div>
+              <div class="moreinfo">
+                <a target="_blank" ng-href="{{ listing.moreinfo }}"><i class="fa fa-arrow-right fa-2x"></i></a>
+
+                  <a ng-href="/posts/edit/{{ listing._id }}"><i class="fa fa-pencil fa-2x"></i></a>
+                  <a href="#" ng-click="deleteAdminListing(listing._id)"><i class="fa fa-trash fa-2x"></i></a>
+                </div>
+
+        </div>
+      </div>
+
+
+    <div class="col-xs-12 col-sm-3 submit-edit text-center  ">
+      <input type="text" class="text-center" ng-model="formData.position" placeholder="Title of Position" required><br><br>
+      <input type="text" class="text-center" ng-model="formData.company" placeholder="Company Name" required><br><br>
+      <input type="text" class="text-center" ng-model="formData.moreinfo" placeholder="Link to More Info" required><br><br>
+      <a class="btn-submit" ng-click="createAdminListing()">SUBMIT</a>
+    </div>
+
+    <div class="col-xs-12 col-sm-3 submit-edit text-center">
+      <input type="text" class="text-center" ng-model="editData.position" placeholder="Title of Position" required><br><br>
+      <input type="text" class="text-center" ng-model="editData.company" placeholder="Company Name" required><br><br>
+      <input type="text" class="text-center" ng-model="editData.moreinfo" placeholder="Link to More Info" required><br><br>
+      <input type="text" class="text-center" ng-model="editData.id" placeholder="MUST ENTER ID" required><br><br>
+      <a class="btn-edit" ng-click="editAdminListing()">EDIT</a>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+</div>

@@ -1,10 +1,9 @@
-var Post = require('../../models/post.js');
-var methodOverride = require('method-override');
-var bodyParser = require('body-parser');
+var Post = require('../models/post.js'),
+    express = require('express'),
+    router = express.Router(),
+    bodyParser = require('body-parser');
 
-module.exports = function(app) {
-
-  app.get('/api/posts', function(req, res) {
+  router.get('/api/posts', function(req, res) {
       Post.find(function(err, post) {
           if (err)
               res.send(err)
@@ -12,7 +11,7 @@ module.exports = function(app) {
       });
   });
 
-  app.get('/api/posts/:id', function(req, res) {
+  router.get('/api/posts/:id', function(req, res) {
       Post.findById(req.params.id, function(err, post) {
           if (err) {
               console.log('Error getting post by ID');
@@ -24,7 +23,7 @@ module.exports = function(app) {
       });
   });
 
-  app.get('/api/posts/:id/edit', function(req, res) {
+  router.get('/api/posts/:id/edit', function(req, res) {
 
       Post.findById(req.params.id, function(err, post) {
           if (err) {
@@ -38,7 +37,7 @@ module.exports = function(app) {
 
   });
 
-  app.put('/api/posts/:id/edit', function(req, res) {
+  router.put('/api/posts/:id/edit', function(req, res) {
       var position = req.body.position;
       var company = req.body.company;
       var moreinfo = req.body.moreinfo;
@@ -60,7 +59,7 @@ module.exports = function(app) {
       });
   });
 
-  app.delete('/api/posts/:id/edit', function(req, res) {
+  router.delete('/api/posts/:id/edit', function(req, res) {
       Post.findById(req.params.id, function(err, post) {
           if (err) {
               console.log(err);
@@ -77,7 +76,7 @@ module.exports = function(app) {
       });
   });
 
-  app.get('/posts/edit/:id', function(req, res) {
+  router.get('/posts/edit/:id', function(req, res) {
     Post.findById(req.params.id, function(err, post) {
         if (err) {
             console.log(err);
@@ -89,7 +88,7 @@ module.exports = function(app) {
   });
 
 
-  app.post('/api/posts', function(req, res) {
+  router.post('/api/posts', function(req, res) {
 
       Post.create({
           position: req.body.position,
@@ -101,4 +100,5 @@ module.exports = function(app) {
       });
   });
 
-};
+
+module.exports = router;
